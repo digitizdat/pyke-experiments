@@ -1,0 +1,10 @@
+
+getofferings
+    foreach
+        vendors.offering_of($offering, $vendor)
+        vendors.component_runson($component, $offering)
+        vendors.cost_of($cost, $offering, $vendor)
+    assert
+        vendors.vendor_offering_supports_forcost($vendor, $offering, $component, $cost)
+        #python print $component, "runs on", $vendor, "for cost:", $cost
+
